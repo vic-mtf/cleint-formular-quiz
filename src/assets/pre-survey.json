@@ -1,0 +1,106 @@
+[
+    {
+      "id": 1,
+      "quiz": "Quelle est votre date de naissance ?",
+      "description": "",
+      "type": "nombre",
+      "modalities": []
+    },
+    {
+      "id": 2,
+      "quiz": "Quel est votre sexe ?",
+      "description": "",
+      "type": "list",
+      "modalities": [
+        {
+            "label": "Homme", 
+            "value": "homme"
+        },
+        {
+            "label": "Femme", 
+            "value": "femme"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "quiz": "Dans quelle commune résidez-vous ?",
+      "description": "",
+      "type": "list",
+      "modalities": [
+        {"label": "Bandalungwa", "value": "bandalungwa"},
+        {"label": "Barumbu", "value": "barumbu"},
+        {"label": "Bumbu", "value": "bumbu"},
+        {"label": "Gombe", "value": "gombe"},
+        {"label": "Kalamu", "value": "kalamu"},
+        {"label": "Kasa-Vubu", "value": "kasa-vubu"},
+        {"label": "Kimbanseke", "value": "kimbanseke"},
+        {"label": "Kinshasa", "value": "kinshasa"},
+        {"label": "Kintambo", "value": "kintambo"},
+        {"label": "Kisenso", "value": "kisenso"},
+        {"label": "Lemba", "value": "lemba"},
+        {"label": "Limete", "value": "limete"},
+        {"label": "Lingwala", "value": "lingwala"},
+        {"label": "Makala", "value": "makala"},
+        {"label": "Maluku", "value": "maluku"},
+        {"label": "Masina", "value": "masina"},
+        {"label": "Matete", "value": "matete"},
+        {"label": "Mont-Ngafula", "value": "mont-ngafula"},
+        {"label": "Ndjili", "value": "ndjili"},
+        {"label": "Ngaba", "value": "ngaba"},
+        {"label": "Ngaliema", "value": "ngaliema"},
+        {"label": "Ngiringiri", "value": "ngiringiri"},
+        {"label": "Nsele", "value": "nsele"},
+        {"label": "Selembao", "value": "selembao"}
+      ]
+    },
+    {
+      "id": 4,
+      "quiz": "Quel est votre niveau d'éducation ?",
+      "description": "",
+      "type": "list",
+      "modalities": [
+        {
+            "label": "Pas de diplôme", 
+            "value": "pas_de_diplome"
+        },
+        {
+          "label": "Diplôme d'études primaires", 
+          "value": "diplome_d_etudes_primaires"
+        },
+        {
+            "label": "Diplôme d'études secondaires", 
+            "value": "diplome_d_etudes_secondaires"
+        },
+        {
+            "label": "Diplôme universitaire", 
+            "value": "diplome_universitaire"
+        },
+        {
+            "label": "Diplôme d'études supérieures", 
+            "value": "diplome_d_etudes_superieures"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "quiz": "Êtes-vous vendeur, acheteur en ligne, ou les deux ?",
+      "description": "",
+      "type": "list",
+      "modalities": [
+        {
+            "label": "Vendeur", 
+            "value": "vendeur"
+        },
+        {
+            "label": "Acheteur", 
+            "value": "acheteur"
+        },
+        {
+            "label": "Les deux", 
+            "value": "vendeur_et_acheteur"
+        }
+      ]
+    }
+  ]
+  

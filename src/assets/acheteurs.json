@@ -1,0 +1,278 @@
+[ 
+    {    
+        "id": 1,    
+        "quiz": "Depuis combien de temps achetez-vous les articles en ligne ?",    
+        "description": "Cette question vous demande depuis combien de temps vous utilisez Internet pour effectuer des achats en ligne, c'est-à-dire la durée approximative pendant laquelle vous avez utilisé des sites web pour acheter des produits ou des services. Votre réponse permettra de comprendre votre niveau d'expérience dans ce domaine. Par exemple, si vous avez commencé à acheter en ligne il y a moins de trois mois, cela signifie que vous êtes nouveau dans le domaine des achats en ligne et que vous avez peu d'expérience. Si vous faites des achats en ligne depuis plus de trois mois, cela montre que vous êtes habitué à effectuer des achats en ligne depuis un certain temps et que vous avez une expérience plus étendue dans ce domaine. Il est donc important de préciser la durée approximative pendant laquelle vous avez effectué vos achats en ligne pour aider à comprendre votre niveau d'expérience dans ce domaine.", 
+        "mode": "mono",  
+        "type": "list",    
+        "modalities": [      
+            {        
+                "label": "Moins de 3 mois",        
+                "value": "moins_de_3_mois"      
+            },      
+            {        
+                "label": "3 mois",        
+                "value": "3_mois"      
+            },      
+            {        
+                "label": "Plus de 3 mois",        
+                "value": "plus_de_3_mois"      
+            }    
+        ]
+    },
+  {
+    "id": 2,
+    "quiz": "Combien de fois avez-vous effectué des achats en ligne au cours des 3 derniers mois ?",
+    "description": "Cette question vous demande combien de fois vous avez fait des achats en ligne au cours des trois derniers mois. Elle cherche à savoir la fréquence à laquelle vous utilisez Internet pour effectuer des achats. Par exemple, si vous avez effectué des achats en ligne une fois par mois au cours des trois derniers mois, vous pouvez répondre ##une fois par mois##. Si vous avez fait des achats en ligne deux fois par mois, vous pouvez répondre ##deux fois par mois##. Votre réponse permettra de comprendre à quelle fréquence vous utilisez les achats en ligne dans votre vie quotidienne.",
+    "type": "number",
+    "modalities": []
+  },
+  {
+    "id": 3,
+    "quiz": "Quels types de produits ou de services avez-vous achetés en ligne au cours des 3 derniers mois ?",
+    "mode": "multi",
+    "description": "Cette question vous demande quels types de produits ou de services vous avez achetés en ligne au cours des trois derniers mois. Elle cherche à connaître les différentes catégories d'articles ou de services que vous avez achetés sur Internet. Par exemple, vous pouvez mentionner si vous avez acheté des vêtements et accessoires, des appareils électroniques et informatiques, des produits de beauté et soins personnels, de l'alimentation et des boissons, des articles automobiles et accessoires, des instruments de musique, des fournitures scolaires, ou d'autres types de produits ou de services spécifiques. Votre réponse permettra de comprendre vos préférences et vos habitudes d'achat en ligne au cours de cette période récente.",
+    "type": "list",
+    "modalities": [
+      {
+        "label": "Vêtements et accessoires",
+        "value": "vetements_accessoires"
+      },
+      {
+        "label": "Appareils électroniques et informatiques",
+        "value": "appareils_electroniques_informatiques"
+      },
+      {
+        "label": "Produits de beauté et soins personnels",
+        "value": "produits_beaute_soins_personnels"
+      },
+      {
+        "label": "Alimentation et boissons",
+        "value": "alimentation_boissons"
+      },
+      {
+        "label": "Automobile et accessoires",
+        "value": "automobile_accessoires"
+      },
+      {
+        "label": "Instruments de musique",
+        "value": "instruments_musique"
+      },
+      {
+        "label": "Fournitures scolaires",
+        "value": "fournitures_scolaires"
+      },
+      {
+        "label": "Livre et médias",
+        "value": "livre_medias"
+      },
+      {
+        "label": "Autres",
+        "value": "autres"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "quiz": "Quels réseaux sociaux utilisez-vous pour effectuer vos achats ?",
+    "mode": "multi",
+    "description": "Cette question vous demande quels réseaux sociaux vous utilisez pour effectuer vos achats en ligne. Elle cherche à connaître les plateformes de réseaux sociaux que vous utilisez spécifiquement pour trouver et acheter des produits ou des services. Par exemple, vous pouvez mentionner si vous utilisez Facebook Marketplace, Instagram Shopping, Pinterest, Twitter, Snapchat, ou d'autres réseaux sociaux similaires pour découvrir et acheter des articles en ligne. Votre réponse permettra de comprendre les canaux que vous préférez utiliser lors de vos achats en ligne et votre niveau de familiarité avec les fonctionnalités d'achat proposées par ces plateformes.",
+    "type": "list",
+    "modalities": [
+      {
+        "label": "Facebook",
+        "value": "facebook"
+      },
+      {
+        "label": "Twitter",
+        "value": "twitter"
+      },
+      {
+        "label": "Tiktoc",
+        "value": "tiktoc"
+      },
+      {
+        "label": "WhatsApp",
+        "value": "whatsapp"
+      },
+      {
+        "label": "Instagram",
+        "value": "instagram"
+      },
+      {
+        "label": "Autre (à préciser)",
+        "value": ""
+      }
+    ]
+  },
+  {    
+    "id": 5,
+    "quiz": "Quels sont les moyens de paiement que vous utilisez le plus souvent pour vos transactions en ligne ?", 
+    "mode": "multi",
+    "description": "Cette question vous demande quels sont les moyens de paiement que vous utilisez le plus souvent lorsque vous effectuez des transactions en ligne. Elle cherche à connaître les méthodes de paiement que vous préférez utiliser lors de vos achats en ligne. Par exemple, vous pouvez mentionner si vous utilisez principalement les services de paiement mobile tels que Orange Money, M-pesa (Vodacom), Airtel Money, Afrimoney (Africell), ou si vous préférez utiliser des méthodes plus traditionnelles telles que les cartes bancaires, les virements bancaires ou les chèques. Votre réponse permettra de comprendre vos préférences en matière de paiement en ligne et les options que vous trouvez les plus pratiques et sécurisées.",    
+    "type": "list",    
+    "modalities": [      
+        {        
+            "label": "Orange money",        
+            "value": "orange_money"      
+        },      
+        {        
+            "label": "M-pesa (vodacom)",        
+            "value": "mpesa"      
+        },      
+        {        
+            "label": "Airtel money",        
+            "value": "airtel_money"      
+        },      
+        {        
+            "label": "Afrimoney (Africell)",        
+            "value": "afrimoney"      
+        },      
+        {        
+            "label": "Carte bancaire",        
+            "value": "carte_bancaire"      
+        },           
+        {        
+            "label": "Virement bancaire",        
+            "value": "virement_bancaire"      
+        },      
+        {        
+            "label": "Chèque",        
+            "value": "cheque"      
+        }    
+        ]
+},
+  {
+    "id": 6,
+    "quiz": "Quel est votre mode de livraison préféré pour vos achats en ligne ?",
+    "mode": "mono",
+   	"description":"Cette question vous demande quel est votre mode de livraison préféré pour vos achats en ligne. Elle cherche à connaître le moyen de livraison que vous préférez utiliser lorsque vous achetez des produits ou des services en ligne. Par exemple, vous pouvez mentionner si vous préférez la livraison à domicile, la livraison en point relais, la livraison en magasin, ou si vous préférez retirer votre achat directement auprès du vendeur. Votre réponse permettra de comprendre vos préférences en matière de livraison et les options que vous trouvez les plus pratiques et sécurisées pour recevoir vos achats en ligne.",
+  	"type":"list", 
+  	"modalities":[
+    	{
+            "label": "Livraison à domicile", 
+        	"value":"livraison_domicile"
+        }, 
+    	{
+            "label":"Récupération en magasin", 
+        	"value":"recuperation_magasin"
+        }, 
+    	{
+            "label":"Dépôt relai", 
+        	"value":"depot_relai"
+        }, 
+    	{
+            "label":"Autre", 
+        	"value":"autre"
+        }
+  	]
+  },
+  {
+   	"id":"7", 
+  	"quiz":"Quels sont les principaux facteurs qui influencent votre décision d’achat en ligne ?", 
+    "mode": "multi",
+  	"description":"Cette question vous demande quels sont les principaux facteurs qui ont une influence sur votre décision d'acheter en ligne. Elle cherche à connaître les éléments qui jouent un rôle important dans votre processus de décision lorsqu'il s'agit d'effectuer des achats sur Internet. Par exemple, vous pouvez mentionner si le prix est un facteur déterminant pour vous, si les avis et les commentaires des autres utilisateurs influencent votre choix, si la réputation du vendeur ou du site web est un critère important, si la disponibilité des produits ou la variété des options de livraison sont des facteurs qui comptent pour vous, ou si la sécurité des paiements en ligne est un aspect essentiel. Votre réponse permettra de comprendre les éléments clés qui influencent vos décisions d'achat en ligne et les priorités que vous avez lors de vos achats sur Internet.",
+  	"type":"list", 
+  	"modalities":[
+    	{
+            "label":"Le prix", 
+        	"value":"prix"
+        }, 
+    	{
+            "label":"La qualité du produit", 
+        	"value":"qualite_produit"
+        }, 
+    	{
+            "label":"Les avis des autres clients (vus, twitte, j’aime, commentaire, etc)", 
+        	"value":"avis_clients"
+        }, 
+    	{
+            "label":"Autre", 
+        	"value":"autre"
+        }
+  	]
+  },
+  {
+  	"id": "8", 
+  	"quiz": "Comment évaluez-vous la qualité du service client que vous recevez lors de vos achats en ligne :", 
+    "mode": "mono",
+  	"description": "Cette question vous demande comment vous évaluez la qualité du service client que vous recevez lors de vos achats en ligne. Elle cherche à connaître les critères que vous utilisez pour juger la qualité du service client lorsque vous interagissez avec les vendeurs ou les sites web pendant vos achats en ligne. Par exemple, vous pouvez mentionner si la rapidité et l'efficacité des réponses du service client sont importantes pour vous, si la courtoisie et la politesse des représentants du service client sont des éléments que vous appréciez, si la résolution rapide des problèmes ou des erreurs est un facteur clé pour vous, ou si la disponibilité du service client par différents canaux de communication (téléphone, chat en direct, e-mail) est un aspect important. Votre réponse permettra de comprendre les critères que vous considérez comme essentiels pour évaluer la qualité du service client lors de vos achats en ligne et les attentes que vous avez envers les vendeurs et les sites web.",
+  	"type":"list", 
+  	"modalities":[
+    	{
+            "label": "Très mauvaise", 
+        	"value": 1
+        }, 
+    	{
+            "label":"Mauvaise", 
+        	"value": 2
+        }, 
+    	{
+            "label":"Normale", 
+        	"value": 3
+        }, 
+    	{
+            "label":"Bonne", 
+        	"value": 4
+        }, 
+    	{
+            "label":"Très bonne", 
+        	"value": 5
+        }, 
+    	{
+            "label":"Excellente", 
+        	"value": 6
+        }
+  	]
+  },
+  {
+  	"id":"9", 
+  	"quiz": "Comment évaluez-vous la qualité des produits que vous achetez en ligne par rapport à ceux que vous achetez en magasin ?", 
+  	"description": "Cette question vous demande comment vous évaluez la qualité des produits que vous achetez en ligne par rapport à ceux que vous achetez en magasin. Elle cherche à connaître votre opinion sur la qualité des produits que vous achetez en ligne et si elle est différente de celle des produits que vous achetez en magasin. Par exemple, vous pouvez mentionner si vous trouvez que les produits en ligne ont une qualité similaire, supérieure ou inférieure à ceux que vous achetez en magasin, si vous avez rencontré des problèmes de qualité avec des produits achetés en ligne ou en magasin, ou si vous avez remarqué des différences de qualité selon les catégories de produits (vêtements, électronique, alimentation, etc.). Votre réponse permettra de comprendre votre perception de la qualité des produits achetés en ligne et les différences éventuelles par rapport à ceux achetés en magasin.",
+    "mode": "mono",
+  	"type":"list", 
+  	"modalities":[
+    	{
+            "label": "Très mauvaise", 
+        	"value": 1
+        }, 
+    	{
+            "label": "Mauvaise", 
+        	"value": 2
+        }, 
+    	{
+            "label": "Normale", 
+        	"value": 2
+        }, 
+    	{
+            "label": "Bonne", 
+        	"value": 4
+        }, 
+    	{
+            "label": "Très bonne", 
+        	"value": 5
+        }, 
+    	{
+            "label": "Excellente", 
+        	"value": 6
+        }
+  	]
+  },
+  {
+  	"id": "10", 
+  	"quiz": "Avez-vous déjà acheté un produit en ligne sur recommandation d’un ami ou d’un membre de la famille ?", 
+  	"description": "Cette question vous demande si vous avez déjà acheté un produit en ligne sur recommandation d'un ami ou d'un membre de la famille. Elle cherche à savoir si vous avez déjà été influencé par les recommandations de proches lors de vos achats en ligne. Par exemple, vous pouvez mentionner si vous avez déjà acheté un produit en ligne recommandé par un ami ou un membre de la famille, si cette recommandation a été un élément clé dans votre décision d'achat, et si vous avez été satisfait de l'achat. Votre réponse permettra de comprendre si vous êtes sensible aux recommandations de votre entourage lors de vos achats en ligne et si cela joue un rôle dans votre processus de décision d'achat.",
+    "mode": "mono",
+  	"type":"list", 
+  	"modalities":[
+    	{
+            "label":"Oui", 
+        	"value":"oui"
+        }, 
+    	{
+            "label":"Non", 
+        	"value":"non"
+        }
+  	]
+  }
+]

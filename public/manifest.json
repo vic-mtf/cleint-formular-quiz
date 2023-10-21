@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Enquete iss-kin",
+  "name": "Plateforme interactive d'enquête et de collecte de données en ligne",
   "icons": [
     {
       "src": "favicon.ico",
