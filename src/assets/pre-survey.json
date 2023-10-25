@@ -2,15 +2,21 @@
     {
       "id": 1,
       "quiz": "Quelle est votre date de naissance ?",
-      "description": "",
-      "type": "nombre",
+      "description": "Cette question vous demande de donner la date à laquelle vous êtes né(e). Cela permettra de mieux vous connaître et de personnaliser les services qui vous seront proposés.",
+      "mode": "date",
+      "type": "date",
+      "label": "Date de naissance",
+      "key": "date_de_naissance",
       "modalities": []
     },
     {
       "id": 2,
       "quiz": "Quel est votre sexe ?",
-      "description": "",
+      "label": "Genre",
+      "description": "Cette question vous demande de préciser votre genre, c'est-à-dire si vous êtes un homme ou une femme. Veuillez indiquer le genre qui correspond à votre identité de genre.",
+      "mode": "mono",
       "type": "list",
+      "key": "genre",
       "modalities": [
         {
             "label": "Homme", 
@@ -25,40 +31,118 @@
     {
       "id": 3,
       "quiz": "Dans quelle commune résidez-vous ?",
-      "description": "",
+      "label": "Commune",
+      "description": "Cette question vous demande dans quelle commune vous habitez actuellement. Veuillez indiquer le nom de la commune où vous résidez.",
+      "mode": "option",
+      "key": "commune",
       "type": "list",
       "modalities": [
-        {"label": "Bandalungwa", "value": "bandalungwa"},
-        {"label": "Barumbu", "value": "barumbu"},
-        {"label": "Bumbu", "value": "bumbu"},
-        {"label": "Gombe", "value": "gombe"},
-        {"label": "Kalamu", "value": "kalamu"},
-        {"label": "Kasa-Vubu", "value": "kasa-vubu"},
-        {"label": "Kimbanseke", "value": "kimbanseke"},
-        {"label": "Kinshasa", "value": "kinshasa"},
-        {"label": "Kintambo", "value": "kintambo"},
-        {"label": "Kisenso", "value": "kisenso"},
-        {"label": "Lemba", "value": "lemba"},
-        {"label": "Limete", "value": "limete"},
-        {"label": "Lingwala", "value": "lingwala"},
-        {"label": "Makala", "value": "makala"},
-        {"label": "Maluku", "value": "maluku"},
-        {"label": "Masina", "value": "masina"},
-        {"label": "Matete", "value": "matete"},
-        {"label": "Mont-Ngafula", "value": "mont-ngafula"},
-        {"label": "Ndjili", "value": "ndjili"},
-        {"label": "Ngaba", "value": "ngaba"},
-        {"label": "Ngaliema", "value": "ngaliema"},
-        {"label": "Ngiringiri", "value": "ngiringiri"},
-        {"label": "Nsele", "value": "nsele"},
-        {"label": "Selembao", "value": "selembao"}
+        {
+          "label": "Bandalungwa", 
+          "value": "bandalungwa"
+        },
+        {
+          "label": "Barumbu", 
+          "value": "barumbu"
+        },
+        {
+          "label": "Bumbu", 
+          "value": "bumbu"
+        },
+        {
+          "label": "Gombe", 
+          "value": "gombe"
+        },
+        {
+          "label": "Kalamu", 
+          "value": "kalamu"
+        },
+        {
+          "label": "Kasa-Vubu", 
+          "value": "kasa-vubu"
+        },
+        {
+          "label": "Kimbanseke", 
+          "value": "kimbanseke"
+        },
+        {
+          "label": "Kinshasa", 
+          "value": "kinshasa"
+        },
+        {
+          "label": "Kintambo", 
+          "value": "kintambo"
+        },
+        {
+          "label": "Kisenso", 
+          "value": "kisenso"
+        },
+        {
+          "label": "Lemba", 
+          "value": "lemba"
+        },
+        {
+          "label": "Limete", 
+          "value": "limete"
+        },
+        {
+          "label": "Lingwala", 
+          "value": "lingwala"
+        },
+        {
+          "label": "Makala", 
+          "value": "makala"
+        },
+        {
+          "label": "Maluku", 
+          "value": "maluku"
+        },
+        {
+          "label": "Masina", 
+          "value": "masina"
+        },
+        {
+          "label": "Matete", 
+          "value": "matete"
+        },
+        {
+          "label": "Mont-Ngafula", 
+          "value": "mont-ngafula"
+        },
+        {
+          "label": "Ndjili", 
+          "value": "ndjili"
+        },
+        {
+          "label": "Ngaba", 
+          "value": "ngaba"
+        },
+        {
+          "label": "Ngaliema", 
+          "value": "ngaliema"
+        },
+        {
+          "label": "Ngiringiri", 
+          "value": "ngiringiri"
+        },
+        {
+          "label": "Nsele", 
+          "value": "nsele"
+        },
+        {
+          "label": "Selembao", 
+          "value": "selembao"
+        }
       ]
     },
     {
       "id": 4,
       "quiz": "Quel est votre niveau d'éducation ?",
-      "description": "",
+      "label": "Niveau d'éducation",
+      "description": "Cette question vous demande de préciser votre niveau d'éducation, c'est-à-dire le niveau de formation que vous avez atteint. Veuillez indiquer le niveau d'études que vous avez terminé ou le niveau de formation dans lequel vous êtes actuellement.",
+      "mode": "mono",
       "type": "list",
+      "key": "niveau_education",
       "modalities": [
         {
             "label": "Pas de diplôme", 
@@ -85,8 +169,11 @@
     {
       "id": 5,
       "quiz": "Êtes-vous vendeur, acheteur en ligne, ou les deux ?",
-      "description": "",
+      "label": "Statut",
+      "description": "Cette question vous demande si vous vendez, achetez en ligne ou si vous faites les deux. En d'autres termes, elle cherche à savoir si vous utilisez internet pour vendre des produits ou des services, pour acheter des produits ou des services, ou si vous utilisez internet pour les deux. Par exemple, si vous avez déjà vendu quelque chose sur une plateforme en ligne comme eBay ou Amazon, vous êtes considéré comme un vendeur en ligne. Si vous avez déjà acheté quelque chose sur ces mêmes plateformes, vous êtes considéré comme un acheteur en ligne. Si vous avez fait les deux, vous êtes considéré comme les deux.",
+      "mode": "mono",
       "type": "list",
+      "key": "statut",
       "modalities": [
         {
             "label": "Vendeur", 

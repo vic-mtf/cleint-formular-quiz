@@ -3,15 +3,22 @@ import { Box, Container, ThemeProvider, createTheme, Typography, Link } from "@m
 import { createContext, useContext, useRef, useState } from "react";
 import Header from "./views/Header";
 import Home from "./views/home/home";
+import PreSurvey from "./views/pre-survey/PreSurvey";
+import Survey from "./views/survey/Survey";
 
 const ViewContext = createContext(null);
 export const useViewContext = () => useContext(ViewContext);
+export const SERVER_URL = "https://enquete-commerce-electronique.onrender.com";
 
 function App() {
   const theme = createTheme({});
   const [view, setView] = useState('home');
   const data = useRef({
-    numbers: []
+    numbers: [],
+    survey: [],
+    preSurvey: {},
+    seller: {},
+    buyer: {},
   });
 
   return (
@@ -29,11 +36,14 @@ function App() {
         >
           <Header/>
           <Box
-            component="main"
+            component="div"
             display="flex"
+            flexDirection="column"
             flex={1}
           >
             {view === 'home' && <Home/> }
+            {view === 'pre-survey' && <PreSurvey/> }
+            {view === 'survey' && <Survey/> }
           </Box>
           <Typography 
             variant="caption"

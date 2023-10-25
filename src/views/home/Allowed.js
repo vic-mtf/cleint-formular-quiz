@@ -5,17 +5,25 @@ import DialogContentText from '@mui/material/DialogContentText'
 import DialogActions from '@mui/material/DialogActions'
 import Button from '@mui/material/Button'
 import { useEffect, useMemo, useState } from 'react'
-import { FormControl, FormHelperText, Fade, IconButton, InputLabel, FilledInput, InputAdornment, Typography, FormControlLabel, Checkbox, Alert, AlertTitle } from '@mui/material'
+import { FormControl, FormHelperText, Fade, IconButton, InputLabel, FilledInput, InputAdornment, Typography, FormControlLabel, Checkbox, Alert, AlertTitle, Backdrop, CircularProgress } from '@mui/material'
 import verifyNumber from '../../utils/verifyNumber'
 import ClearIcon from '@mui/icons-material/Clear';
-import { useViewContext } from '../../App'
+import { SERVER_URL, useViewContext } from '../../App'
 import getGeolocation from '../../utils/geo'
+import useAxios from 'axios-hooks'
 
 export default function Allowed({open, onClose}) {
     const [allowedGeoLoCation, setAllowedGeoLoCation] = useState(false);
     const [allowedAddNum, setAllowedAddNum] = useState(false);
     const [{data}, {setView}] = useViewContext();
     const [nums, setNums] = useState(['Numéro téléphone 1']);
+
+    const [{loading}, refetch] = useAxios({
+        url: '/check',
+        manual: true,
+        baseURL: SERVER_URL,
+        method: 'POST',
+    }, {manual: true});
 
     const onVerify = (cond, index) => cond ? (allow, num) => {
         setAllowedAddNum(allow);
@@ -25,69 +33,88 @@ export default function Allowed({open, onClose}) {
     } : null;
 
     return (
-        <Dialog 
-            open={Boolean(open)} 
-            onClose={onClose}
-        >
-          <DialogTitle>
-            Démarrer l'enquête
-          </DialogTitle>
-          <DialogContent>
-            Veuillez entrer correctement votre numéro de téléphone. 
-            Si vous en avez plusieurs, vous pouvez les saisir un par un en cliquant sur <Typography fontStyle="bold" variant="button">"Ajouter un autre numéro de téléphone"</Typography>. 
-            Assurez-vous que les numéros saisis n'ont pas déjà participé à cette enquête.
-            <DialogContentText>
-                {
-                    nums.map((label, index) => (
-                        <InputPhoneNumber
-                            key={label}
-                            label={label}
-                            deleted={Boolean(index)}
-                            onVerify={onVerify(nums.length - 1 === index, index)}
-                            disabled={nums.length - 1 !== index}
-                            oldNum={index ? data.current.numbers[index - 1] : ''}
-                            onDeleteNum={() => {
-                                setNums(nums.slice(0, -1));
-                                setAllowedAddNum(true);
-                            }}
-                        />
-                    ))
-                }
-                <Button
-                    onClick={() => {
-                        setNums(nums => nums.concat(`Numéro téléphone ${nums.length + 1}`));
-                        setAllowedAddNum(false)
-                    }}
-                    disabled={!allowedAddNum}
-                >
-                    Ajouter un autre numéro de téléphone
-                </Button>
+        <>
+            <Dialog 
+                open={Boolean(open)} 
+                onClose={onClose}
+            >
+            <DialogTitle>
+                Démarrer l'enquête
+            </DialogTitle>
+            <DialogContent>
+                Veuillez entrer correctement votre numéro de téléphone. 
+                Si vous en avez plusieurs, vous pouvez les saisir un par un en cliquant sur <Typography component="span" fontStyle="bold" variant="button">"Ajouter un autre numéro de téléphone"</Typography>. 
+                Assurez-vous que les numéros saisis n'ont pas déjà participé à cette enquête.
+                <DialogContentText component="div">
+                    {
+                        nums.map((label, index) => (
+                            <InputPhoneNumber
+                                key={label}
+                                label={label}
+                                deleted={Boolean(index)}
+                                onVerify={onVerify(nums.length - 1 === index, index)}
+                                disabled={nums.length - 1 !== index}
+                                oldNum={index ? data.current.numbers[index - 1] : ''}
+                                onDeleteNum={() => {
+                                    setNums(nums.slice(0, -1));
+                                    setAllowedAddNum(true);
+                                }}
+                            />
+                        ))
+                    }
+                    <Button
+                        onClick={() => {
+                            setNums(nums => nums.concat(`Numéro téléphone ${nums.length + 1}`));
+                            setAllowedAddNum(false)
+                        }}
+                        disabled={!allowedAddNum}
+                    >
+                        Ajouter un autre numéro de téléphone
+                    </Button>
 
-                <AllowGeoLocation
-                    onAllowedChange={(allowed) => {
-                        setAllowedGeoLoCation(allowed)
-                    }}
-                />
-            </DialogContentText>
-          </DialogContent>
-          <DialogActions>
-            <Button
-              onClick={onClose}
-              color="primary"
+                    <AllowGeoLocation
+                        onAllowedChange={(allowed) => {
+                            setAllowedGeoLoCation(allowed)
+                        }}
+                    />
+                </DialogContentText>
+            </DialogContent>
+            <DialogActions>
+                <Button
+                onClick={onClose}
+                color="primary"
+                >
+                Annuler
+                </Button>
+                <Button
+                onClick={() => {
+                    refetch({
+                        data: {
+                            numbers: data.current.numbers,
+                        }
+                    }).then((result => {
+                        if(result.data?.data) 
+                            alert('Le numéro de portable spécifié a déjà participé à cette enquête. Veuillez essayer avec un autre numéro');
+                        else  setView('pre-survey');
+
+                    })).catch((error) => {
+                        alert(error.toString());
+                    });
+                }}
+                variant="contained"
+                disabled={!allowedGeoLoCation && !allowedAddNum}
+                >
+                Démarrer
+                </Button>
+            </DialogActions>
+            </Dialog>
+            <Backdrop
+                sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1000 }}
+                open={loading}
             >
-              Annuler
-            </Button>
-            <Button
-              onClick={() => {
-                setView('pre-survey')
-              }}
-              variant="contained"
-              disabled={!allowedGeoLoCation && !allowedAddNum}
-            >
-              Démarrer
-            </Button>
-          </DialogActions>
-        </Dialog>
+                <CircularProgress color="inherit" />
+            </Backdrop>
+        </>
     )
 }
 
@@ -131,15 +158,14 @@ const InputPhoneNumber = ({onChange, onError, label, onVerify, disabled, oldNum,
     return (
         <FormControl
             variant="filled"
-            sx={{ m: 1 }} 
+            sx={{ my: 1 }} 
             color={isError ? 'error' : 'primary'}
             required
             disabled={disabled}
             fullWidth
         >
-          <InputLabel htmlFor="filled-adornment-password">{label}</InputLabel>
+          <InputLabel component="div" >{label}</InputLabel>
           <FilledInput
-            id="filled-adornment-password"
             type="tel"
             value={num}
             onChange={handleChange}
@@ -159,10 +185,10 @@ const InputPhoneNumber = ({onChange, onError, label, onVerify, disabled, oldNum,
             </InputAdornment>
             }
           />
-            <Fade in={isError}>
+          
+            <Fade in={isError} >
                 <FormHelperText
-                    component={Typography}
-                    variant="caption"
+                    component="div"
                     sx={{
                         color: 'error.main'
                     }}

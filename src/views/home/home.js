@@ -46,7 +46,7 @@ export default function Home() {
           Savoir plus
         </DialogTitle>
         <DialogContent>
-          <DialogContentText>
+          <DialogContentText component="div">
             {texts.iss}
           </DialogContentText>
         </DialogContent>
@@ -70,21 +70,25 @@ export default function Home() {
 
 const texts = {
   home: `
-  Participez à notre enquête sur le commerce électronique à Kinshasa !
-  Nous avons besoin de vos commentaires pour mieux comprendre les défis et les opportunités du commerce électronique dans cette région. Votre expérience en tant que vendeur ou acheteur en ligne est inestimable. Vos commentaires nous aideront à formuler des recommandations pratiques pour améliorer les infrastructures, renforcer la confiance des consommateurs et stimuler le développement du commerce électronique à Kinshasa.
-  Rejoignez-nous aujourd'hui et faites entendre votre voix dans le monde du commerce électronique à Kinshasa ! `,
+  Nous vous invitons cordialement à participer à notre enquête sur le commerce électronique à Kinshasa. Votre expérience et vos commentaires sont essentiels pour nous aider à comprendre les défis et les opportunités du commerce électronique dans cette région.
+En tant que vendeur ou acheteur en ligne, votre point de vue est inestimable. Vos retours nous permettront de formuler des recommandations pratiques pour améliorer les infrastructures, renforcer la confiance des consommateurs et stimuler le développement du commerce électronique à Kinshasa.
+
+Et ce n’est pas tout ! En participant à cette enquête, vous aurez la chance de gagner un crédit allant de 50 à 200 unités. C’est notre façon de vous remercier pour votre temps et votre contribution précieuse.
+
+Rejoignez-nous aujourd’hui et faites entendre votre voix dans le monde du commerce électronique à Kinshasa !
+
+Merci d’avance pour votre participation.`,
   iss: `
-  Enquête Iss kin est un site web qui vous permet de répondre à des 
-  enquêtes sur le commerce électronique à Kinshasa, 
-  une région dynamique et en pleine croissance. 
-  En répondant aux enquêtes, vous contribuez à 
-  la recherche sur le commerce électronique dans 
-  cette région, et vous aidez les acteurs locaux 
-  à améliorer leurs services et leurs offres. 
- 
-  Vos informations personnelles sont protégées et ne 
-  seront jamais divulguées à des tiers. 
-  Iss kin respecte les normes éthiques et légales 
-  en matière d'enquêtes en ligne. 
+  Chers utilisateurs,
+
+Nous sommes ravis de vous présenter **Iss kin**, un site web dédié à la réalisation d'enquêtes sur le commerce électronique à Kinshasa, une région dynamique et en pleine croissance. En participant à nos enquêtes, vous jouez un rôle crucial dans la recherche sur le commerce électronique dans cette région. Vos réponses aideront les acteurs locaux à améliorer leurs services et leurs offres, contribuant ainsi à l'évolution du paysage du commerce électronique à Kinshasa.
+
+Nous comprenons l'importance de la confidentialité et nous nous engageons à protéger vos informations personnelles. Chez Iss kin, nous respectons les normes éthiques et légales en matière d'enquêtes en ligne. Soyez assurés que vos informations personnelles sont protégées et ne seront jamais divulguées à des tiers. Nous utilisons des protocoles de sécurité avancés pour garantir la sécurité de vos données.
+
+En outre, nous tenons à souligner que votre participation est totalement volontaire. Vous avez le droit de retirer votre consentement à tout moment. Cependant, chaque réponse compte et votre contribution est précieuse pour nous.
+
+Nous vous remercions d'avance pour votre temps et votre contribution à cette initiative importante. Ensemble, nous pouvons façonner l'avenir du commerce électronique à Kinshasa.
+
+Merci de faire partie de cette aventure passionnante avec Iss kin.
 `
 }

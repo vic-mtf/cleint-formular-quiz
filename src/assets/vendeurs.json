@@ -5,6 +5,8 @@
         "description": "Cette question demande depuis combien de temps vous avez commencé à vendre vos produits ou services. Si vous avez commencé à vendre il y a moins de 3 mois, vous pouvez choisir ##Moins de 3 mois## comme réponse. Si vous avez commencé à vendre il y a exactement 3 mois, vous pouvez choisir ##3 mois##. Si vous avez commencé à vendre il y a plus de 3 mois, vous pouvez choisir ##Plus de 3 mois##. Par exemple, si vous avez commencé à vendre des vêtements et accessoires en ligne il y a 2 mois, vous pouvez répondre ##Moins de 3 mois##.",
         "type": "list",
         "mode": "mono",
+        "key": "duree_activite",
+        "label": "Durée d'activité",
         "modalities": [
             {
                 "label": "Moins de 3 mois", 
@@ -26,6 +28,8 @@
         "description": "Cette question demande simplement ce que vous vendez, qu'il s'agisse de produits ou de services. Par exemple, si vous vendez des vêtements pour hommes et femmes, vous pouvez répondre ##Vêtements##. Si vous vendez des services de nettoyage à domicile, vous pouvez répondre #Services de nettoyage à domicile#.",
         "type": "list",
         "mode": "multi",
+        "key": "type_produits_services",
+        "label": "Type de produits et/ou  services",
         "modalities": [
             {
                 "label": "Vêtements et accessoires", 
@@ -65,13 +69,18 @@
         "description": "Cette question demande quels réseaux sociaux vous utilisez pour promouvoir et vendre vos produits ou services. Vous pouvez choisir parmi différents réseaux sociaux populaires tels que Facebook, Twitter, TikTok, WhatsApp, Instagram, ou tout autre réseau social spécifique que vous utilisez. Par exemple, si vous utilisez principalement Facebook pour promouvoir et vendre vos produits ou services, vous pouvez répondre ##Facebook##.",
         "mode": "multi",
         "type": "list",
+        "key": "reseaux_sociaux_vendre",
+        "label": "Reseaux sociaux",
         "modalities": [
-        {"label": "Facebook", "value": "facebook"},
-        {"label": "Twitter", "value": "twitter"},
-        {"label": "Tiktoc", "value": "tiktoc"},
-        {"label": "WhatsApp", "value": "whatsapp"},
-        {"label": "Instagram", "value": "instagram"},
-        {"label": "Autre (à préciser)", "value": "autre"}
+            {"label": "Facebook", "value": "facebook"},
+            {"label": "Instagram", "value": "instagram"},
+            {"label": "Twitter", "value": "twitter"},
+            {"label": "TikTok", "value": "tiktok"},
+            {"label": "Snapchat", "value": "snapchat"},
+            {"label": "YouTube", "value": "youtube"},
+            {"label": "WhatsApp", "value": "whatsapp"},
+            {"label": "Telegram", "value": "telegram"},
+            {"label": "Likee", "value": "likee"}
         ]
     },
     {
@@ -79,6 +88,9 @@
         "quiz": "Au cours des 3 derniers mois, combien d'articles avez-vous achetés pour vendre ?",
         "description": "Cette question demande combien d'articles vous avez achetés au cours des 3 derniers mois dans le but de les revendre. Il s'agit de connaître la quantité d'articles que vous avez achetés pour constituer votre stock de vente. Par exemple, si vous avez acheté 50 articles de vêtements au cours des 3 derniers mois pour les vendre dans votre boutique en ligne, vous pouvez répondre ##J'ai acheté 50 articles de vêtements##.",
         "type": "number",
+        "key": "nombre_articles_achetes_vente",
+        "label": "Nombre d'articles achetée",
+        "unit": "articles",
         "modalities": []
     },
     {
@@ -86,6 +98,9 @@
         "quiz": "Au cours des 3 derniers mois, combien d'articles avez-vous vendus en ligne ?",
         "description": "Cette question demande combien d'articles vous avez vendus en ligne au cours des 3 derniers mois. Il s'agit de connaître la quantité d'articles que vous avez vendus en ligne pendant cette période donnée. Par exemple, si vous avez vendu 20 articles de vêtements en ligne au cours des 3 derniers mois, vous pouvez répondre ##J'ai vendu 20 articles de vêtements en ligne##.",
         "type": "number",
+        "unit": "articles",
+        "key": "nombre_articles_vendus",
+        "label": "Nombre d'articles vendus",
         "modalities": []
     },
     {
@@ -94,6 +109,9 @@
         "description": "demande combien de personnes sont abonnées à vos pages de vente sur les réseaux sociaux. Il s'agit de connaître le nombre d'abonnés qui suivent vos pages dédiées à la vente de vos produits ou services. Par exemple, si vous avez 500 abonnés sur votre page Facebook dédiée à la vente de vêtements, vous pouvez répondre ##J'ai 500 abonnés sur ma page Facebook de vente de vêtements##",
         "link": 3,
         "type": "number",
+        "unit": "abonnés",
+        "key": "nombre_abonnes_pages",
+        "label": "Nombre d'abonnés",
         "modalities": []
     },
     {
@@ -102,6 +120,9 @@
         "description": "Cette question demande combien de fois vos articles publiés sur vos réseaux sociaux sont vus en moyenne. Il s'agit de connaître le nombre de vues que vous recevez lorsque vous partagez du contenu sur vos pages de vente. Par exemple, si vos articles reçoivent en moyenne 1000 vues lorsque vous les publiez sur vos réseaux sociaux, vous pouvez répondre ##En moyenne, mes articles reçoivent 1000 vues lorsque je les publie sur mes réseaux sociaux##.",
         "link": 3,
         "type": "number",
+        "unit": "vues",
+        "key": "nombre_vues_moyen_publication",
+        "label": "Nombre des vues",
         "modalities": []
     },
     {
@@ -110,6 +131,8 @@
         "description": "Cette question demande quels sont les moyens de paiement que vous acceptez pour les transactions réalisées en ligne. Il s'agit de savoir quels modes de paiement vous offrez à vos clients pour régler leurs achats effectués sur votre site web ou sur vos pages de vente. Vous pouvez accepter différents modes de paiement tels que les cartes bancaires, PayPal, les virements bancaires, les chèques, ou encore des services de paiement mobiles comme Orange Money, M-Pesa, Airtel Money ou Afrimoney. Par exemple, si vous acceptez les cartes bancaires comme modes de paiement pour vos transactions en ligne, vous pouvez répondre ##J'accepte les cartes bancaires pour les paiements en ligne##.",
         "mode": "multi",
         "type": "list",
+        "key": "paiement",
+        "label": "Paiement",
         "modalities": [
             {
                 "label": "Orange money", 
@@ -147,6 +170,8 @@
         "description": "Cette question demande si vous disposez d'un système de livraison pour vos produits et, le cas échéant, comment cela fonctionne. Il s'agit de savoir si vous proposez un service de livraison pour expédier les produits à vos clients et comment ce processus de livraison est organisé. Par exemple, si vous avez un système de livraison, vous pouvez expliquer que vous travaillez avec des transporteurs partenaires qui se chargent d'acheminer les colis jusqu'aux clients. Vous pouvez préciser si vous proposez des options de livraison express ou standard, les délais de livraison estimés, ainsi que les frais éventuels liés à la livraison.",
         "mode": "mono",
         "type": "list",
+        "key": "systeme_livraison",
+        "label": "Système de livraison",
         "modalities": [
             {
                 "label": "Oui, livraison à domicile par transporteur", 
@@ -167,17 +192,19 @@
         "description" : "Cette question demande quels sont les principaux défis auxquels votre entreprise doit faire face dans le cadre de son activité de commerce électronique. Il s'agit de savoir quels sont les obstacles que vous rencontrez dans la vente de vos produits ou services en ligne. Ces défis peuvent varier en fonction de votre secteur d'activité, de la concurrence, des réglementations en vigueur, ou encore des habitudes d'achat des consommateurs. Par exemple, vous pouvez mentionner que la concurrence est rude sur le marché en ligne, que les coûts d'expédition sont élevés, que les clients sont exigeants en termes de délais de livraison ou encore que les problèmes de sécurité informatique peuvent représenter un risque pour votre entreprise.",
         "type" : "list",
         "mode" : "multi",
+        "key": "defis_commerce_electronique",
+        "label": "Défis commerce en ligne",
         "modalities" : [
             {"label" : 
-                "Faible pénétration d’Internet",
+                "Faible pénétration d'Internet",
                 "value" : "faible_penetration_internet"
             },
             {
-                "label" : "Manque d’infrastructures de paiement électroniques appropriées",
+                "label" : "Manque d'infrastructures de paiement électroniques appropriées",
                 "value" : "manque_infrastructures_paiement_electroniques_appropriees"
             },
             {
-                "label" : "Problèmes d’adressage et de livraison",
+                "label" : "Problèmes d'adressage et de livraison",
                 "value" : "problemes_adressage_livraison"
             },
             {
